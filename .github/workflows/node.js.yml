@@ -25,7 +25,7 @@ jobs:
           echo "${{ secrets.PROD_ENV_FILE }}" > .env
 
       - name: Install PM2
-        run: npm install -g pm2  # Install pm2 globally on the runner
+        run: npm install -g pm2  # Ensure pm2 is installed and available
       
       - name: Restart Application
         run: pm2 restart BackendAPI
