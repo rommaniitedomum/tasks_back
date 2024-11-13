@@ -29,3 +29,7 @@ jobs:
           echo "${{ secrets.PROD_ENV_FILE }}" > .env
 
       - run: pm2 restart BackendAPI
+      - name: Add pm2 to PATH
+        run: echo "/home/ubuntu/.nvm/versions/node/v18.x/bin" >> $GITHUB_PATH
+      - name: Restart Application
+        run: pm2 restart BackendAPI
